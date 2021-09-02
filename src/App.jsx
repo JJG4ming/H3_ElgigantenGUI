@@ -14,10 +14,6 @@ const history = createBrowserHistory();
 function App() {
 
   const windowWidth = window.innerWidth;
-
-  const [submitted, setSubmitted] = useState(false)
-
-  const [productList, setProductList] = useState([])
   const [shownEmployee, setShownEmployee] = useState({})
 
 
@@ -100,7 +96,7 @@ function App() {
         </header>
         <main>
           <Route exact path="/">
-            <Products />
+            {history.push("/products")}
           </Route>
           <Route path="/products">
             <Products />
