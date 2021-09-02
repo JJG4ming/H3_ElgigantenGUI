@@ -19,7 +19,7 @@ const Products = () => {
 
   const Login = () => {
     fetch("http://localhost:42069/Users", {
-      method: "POST",
+      method: "GET",
       mode: "cors",
       headers: {
         "Content-Type": "application/json"

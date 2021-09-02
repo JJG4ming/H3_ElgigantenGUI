@@ -5,8 +5,8 @@ import { Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 
-import Products from "./components/Products";
-import Maintenance from "./components/Maintenance";
+import Products from "./components/Products/Products";
+import Employees from "./components/Employees";
 import Machinepark from "./components/MachinePark/index";
 import Showmachine from "./components/ShowMachine";
 
@@ -84,7 +84,7 @@ function App() {
                 <button onClick={(e) => HandleNavClick(e, "products", "PRODUKTER")}>PRODUKTER</button>
               </li>
               <li>
-                <button onClick={(e) => HandleNavClick(e, "maintenance", "VEDLIGEHOLDELSE")}>VEDLIGEHOLDELSE</button>
+                <button onClick={(e) => HandleNavClick(e, "employees", "MEDARBEJDERE")}>MEDARBEJDERE</button>
               </li>
               <li>
                 <button onClick={(e) => HandleNavClick(e, "machinepark", "MASKINPARK")}>MASKINPARK</button>
@@ -97,12 +97,15 @@ function App() {
             </div>
           </nav>
         </header>
-        <main>  
+        <main>
+          <Route exact path="/">
+            <Products />
+          </Route>
           <Route path="/products">
             <Products />
           </Route>
-          <Route path="/maintenance">
-            <Maintenance setSubmitted={setSubmitted} setShownMachine={setShownMachine} setNotes={setNotes}/>
+          <Route path="/employees">
+            <Employees />
           </Route>
           <Route path="/machinepark">
             <Machinepark />
