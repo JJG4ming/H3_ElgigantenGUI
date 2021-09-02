@@ -71,22 +71,22 @@ const ProductModals = ({ currentProduct, setCurrentProduct, history}) => {
     return(
         <React.Fragment>
             <div className="modal" id="productmodal2">
-                <form className ="modalforms" id="machinemodal" onSubmit={function(event){
+                <form className ="modalforms" id="productmodal" onSubmit={function(event){
                     event.preventDefault();
                     UpdateProduct();
                 }}>
                     <div className="modallabelbox">
-                    <label htmlFor="editmachineid">
-                        <span>Produkt nr.</span><input type="test" readOnly={true} className="bigmodalinputs" id="editmachineid" name="editmachineid" defaultValue={currentProduct["productId"]} required></input><br></br>
+                    <label>
+                        <span>Produkt nr.</span><input type="test" readOnly={true} className="bigmodalinputs" id="editproductid" name="editproductid" defaultValue={currentProduct["productId"]} required></input><br></br>
                     </label>
-                    <label htmlFor="editmachinemodel">
-                    <span>Navn</span><input type="text" className="modalinputs" id="editmachinemodel" name="editmachinemodel" onChange={e => setName(e.target.value)} defaultValue={currentProduct["productName"]}></input><br></br>
+                    <label>
+                    <span>Navn</span><input type="text" className="modalinputs" id="editproductname" name="editproductname" onChange={e => setName(e.target.value)} defaultValue={currentProduct["productName"]}></input><br></br>
                     </label>
-                    <label htmlFor="editmachinenozzle">
-                    <span>Pris</span><input type="text" className="modalinputs" id="editmachinenozzle" name="editmachinenozzle" onChange={e => setPrice(e.target.value)} defaultValue={currentProduct["productPrice"]}></input><br></br>
+                    <label>
+                    <span>Pris</span><input type="text" className="modalinputs" id="editproductprice" name="editproductprice" onChange={e => setPrice(e.target.value)} defaultValue={currentProduct["productPrice"]}></input><br></br>
                     </label>
                     </div>
-                    <span className="removemodalbuttonspan"></span><button className="removemodalbutton" id="removemachinebutton" type="button" onClick={function(event){
+                    <span className="removemodalbuttonspan"></span><button className="removemodalbutton" id="removeproductbutton" type="button" onClick={function(event){
                         event.preventDefault();
                         var modal = document.getElementById("productmodal2")
                         modal.style.display = "none"
@@ -100,28 +100,28 @@ const ProductModals = ({ currentProduct, setCurrentProduct, history}) => {
                 </form>
             </div>
             <div className="modal" id="productmodal5">
-                <form className ="modalforms" id="createmachinemodal" onSubmit={function(event){
+                <form className ="modalforms" id="createproductmodal" onSubmit={function(event){
                 event.preventDefault();
                 createProduct();
                 }}>
-                <h1 id="createmachinemodaltext">Opret nyt produkt</h1>
+                <h1 id="createproductmodaltext">Opret nyt produkt</h1>
                     <input type="text" className="modalinputs" id="createproductname" name="createproductname" placeholder="Navn" required></input><br></br>
                     <input type="text" className="modalinputs" id="createproductprice" name="createproductprice" placeholder="Pris" required></input><br></br>
-                    <div className="modalbuttonbox" id="createpumpmodalbuttonbox">
+                    <div className="modalbuttonbox" id="createproductmodalbuttonbox">
                     <button className="cancelmodalbutton" id="closemodalbutton" type="button" onClick={CloseAllModals}>Anuller</button>
                     <button className="modalbuttons" id="updatemodalbutton" type="submit">Gem</button>
                 </div>
                 </form>
             </div>
             <div className="modal" id="productmodal6">
-                <form className ="modalforms" id="removemachinemodal" onSubmit={function(event){
+                <form className ="modalforms" id="removeproductmodal" onSubmit={function(event){
                     event.preventDefault();
                     RemoveProduct();
                 }}>
                     <h1 className="labelremovemodal">Slet Produkt {currentProduct.id}?</h1>
                     <div className="modalbuttonbox">
-                    <button className="cancelmodalbutton" id="cancelmachinemodal" type="button" onClick={CloseAllModals}>Anuller</button>
-                    <button className="removemodalbutton" id="removemachinemodalbutton" type="submit">Slet Produkt</button>
+                    <button className="cancelmodalbutton" id="cancelproductmodal" type="button" onClick={CloseAllModals}>Anuller</button>
+                    <button className="removemodalbutton" id="removeproductmodalbutton" type="submit">Slet Produkt</button>
                     </div>
                 </form>
             </div>

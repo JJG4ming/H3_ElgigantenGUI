@@ -17,7 +17,7 @@ body {
 }
 
 #employeename {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .imgcontainer {
@@ -25,28 +25,21 @@ body {
   margin: 24px 0 12px 0;
 }
 
-input[type="datetime-local"] {
-  width: 160px;
-  height: 50px;
-  border-radius: 16px;
-  border: none;
-}
-
-.machineparktables {
+.productstables {
   border-collapse: collapse;
   width: 60%;
   margin: auto;
   margin-top: 50px;
 }
 
-.machineparktables td, .machineparktables th {
+.productstables td, .productstables th {
   padding: 8px 2px;
 }
 
-.machineparktables tr:nth-child(even){background-color: #e4e4e4;}
-.machineparktables tr:nth-child(odd){background-color: #f8f8f8;}
+.productstables tr:nth-child(even){background-color: #e4e4e4;}
+.productstables tr:nth-child(odd){background-color: #f8f8f8;}
 
-.machineparktables th {
+.productstables th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -54,7 +47,7 @@ input[type="datetime-local"] {
   color: rgb(255, 255, 255);
 }
 
-.machineparktableheaders {
+.productstableheaders {
   background: #1a1a4e;
   width: 60%;
   margin: auto;
@@ -64,7 +57,7 @@ input[type="datetime-local"] {
   overflow: auto;
 }
 
-.machineparktableheaderstext {
+.productstableheaderstext {
   margin-left: 20px;
   color: white;
   padding: 10px;
@@ -72,7 +65,7 @@ input[type="datetime-local"] {
   float: left;
 }
 
-.machineparktableheadersplus {
+.productstableheadersplus {
   color: white;
   float: right;
   font-size: 42px;
@@ -81,7 +74,7 @@ input[type="datetime-local"] {
   cursor: pointer;
 }
 
-#createmachinemodaltext {
+#createproductmodaltext {
   width: fit-content;
   margin: auto;
   padding-top: 10px;
@@ -124,7 +117,7 @@ input[type="datetime-local"] {
   transition: all 0.3s linear;
 }
 
-#createmachinemodal {
+#createproductmodal {
   height: 260px;
 }
 
@@ -138,15 +131,11 @@ input[type="datetime-local"] {
   margin: auto;
 }
 
-#machinemodal {
+#productmodal {
   height: 316px;
 }
 
-#removemachinemodal {
-  height: 180px;
-}
-
-#removepumpmodal {
+#removeproductmodal {
   height: 180px;
 }
 
@@ -190,12 +179,7 @@ input[type="datetime-local"] {
   width: 30%;
 }
 
-#cancelmachinemodal {
-  border: solid orange 1px;
-  color: orange;
-}
-
-#cancelpumpmodal {
+#cancelproductmodal {
   border: solid orange 1px;
   color: orange;
 }
@@ -246,12 +230,7 @@ input[type="datetime-local"] {
   margin-bottom: 60px;
 }
 
-#removemachinemodalbutton {
-  color: white;
-  background: #DF4848;
-}
-
-#removepumpmodalbutton {
+#removeproductmodalbutton {
   color: white;
   background: #DF4848;
 }
@@ -264,39 +243,8 @@ input[type="datetime-local"] {
   border: solid rgb(230, 230, 230) 1px;
 }
 
-#createpumpmodallabelbox {
-  margin: auto;
-}
-
-#createpumpmodaltext {
-  width: fit-content;
-  margin: auto;
-  padding-top: 10px;
-  font-size: 30px;
-}
-
-#createpumpmodal {
-  height: 400px;
-}
-
-#createpumpmodalbuttonbox {
+#createproductmodalbuttonbox {
   margin-top: 50px;
-}
-
-.createpumpmodalinputs {
-  font-size: 18px;
-  width: 80%;
-  height: 36px;
-  border-radius: 10px;
-  border: solid rgb(230, 230, 230) 1px;
-  margin-left: 10%;
-  margin-top: 20px;
-}
-
-#createpumpname {
-  width: 80%;
-  margin-top: 20px;
-  margin-left: 10%;
 }
 
 .bigmodalinputs {
@@ -313,7 +261,7 @@ input[type="datetime-local"] {
 }
 
 #employeename {
-  font-size: 32px;
+  font-size: 24px;
   margin-top: 40%;
   transition: all .3s ease-in-out;
 }
@@ -324,7 +272,7 @@ input[type="datetime-local"] {
   padding: 8px;
 }
 
-#maintenancetext {
+#Employeestext {
   margin-top: -25px;
   position: absolute;
 }
@@ -385,7 +333,7 @@ button {
   margin-top: 25px
 }
 
-#maintenance {
+#Employees {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
@@ -393,7 +341,7 @@ button {
   flex-wrap: wrap;
 }
 
-.maintenanceboxheading {
+.Employeesboxheading {
   padding-top: 6px;
   font-size: 18px;
   color: white;
@@ -401,18 +349,18 @@ button {
   width: 100% !important;
 }
 
-.maintenanceboxtext {
+.Employeesboxtext {
   font-size: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
   color: rgb(23, 30, 82);
 }
 
-#maintenanceboxhover {
+#Employeesboxhover {
   text-align: left;
 }
 
-#maintenanceboxes {
+#Employeesboxes {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -437,59 +385,50 @@ button {
   width: 250px;
 }
 
-#maintenanceboxes:hover #hid-box{
+#Employeesboxes:hover #hid-box{
   top: 20%;
 }
 
-#maintenanceboxes:hover #employeename {
+#Employeesboxes:hover #employeename {
   margin-top: 0px;
   transition: all .3s ease-in-out;
 }
 
-#shownmachine {
+#shownemployee {
   display: flex;
   margin: auto;
   flex-direction: column;
 }
 
-#allmachineattributes {
+#allproductattributes {
   display: flex;
+  width: 60%;
   flex-direction: row;
   margin: auto;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.showmachineh1{
+.showproducth1{
   border-bottom: 1px solid black;
+  font-size: 28px;
 }
 
-.machineattributes {
+.productattributes {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 250px;
+  width: 300px;
+  height: 100px;
   justify-content: center;
   border: 1px solid black;
   margin: 10px;
 }
 
-.machineattributes p{
+.productattributes p{
   font-size: 22px;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-#stopwateringbuttontext {
-  visibility: hidden;
-}
-
-#stopwateringbutton {
-  cursor: pointer;
-  background: #DF4848;
-  color: white;
-  font-size: 20px;
-  border-radius: 8px;
 }
 
 .tables {
@@ -663,77 +602,6 @@ label{
   font-size: 22px;
 }
 
-/* Hide the browser's default checkbox */
-.container input {
-  display: none
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: relative;
-  height: 25px;
-  width: 25px;
-  background-color: rgb(200, 200, 200);
-  border: solid #1a1a4e;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #777;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #1a1a4e;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-#choosemachine{
-  border: solid #1a1a4e;
-}
-
-#choosepump{
-  border: solid #1a1a4e;
-}
-
-#checkboxtext{
-  text-align: center;
-  margin-bottom: 1%;
-  font-size: 18px;
-}
-
-#checks{
-  border: solid black;
-  margin: auto;
-  font-size: 24px;
-  width: 30%;
-  padding: 5px;
-}
-
 .container{
   font-size: 24px;
   width: fit-content;
@@ -743,26 +611,6 @@ label{
 form.select div {
   padding: 10px;
 }
-
-#buttonstartmachine {
-  display: block;
-  background-color: #1a1a4e;
-  padding: .5em;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 32px;
-  text-decoration: none;
-  border: none;
-  margin: auto;
-  margin-top: 30px
- }
- 
- #buttonstartmachine:hover {
-  border: none;
-  background: #777;
- }
 
 .createandupdatebuttons {
   display: block;
@@ -825,22 +673,6 @@ form.select div {
   width: 75vw;
   margin: auto;
 }
-
-.choosetimesubmit{
-    background-color: #1a1a4e;
-    padding: .5em;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 6px;
-    color: #fff;
-    font-size: 32px;
-    text-decoration: none;
-    border: none;
-    margin: auto;
-    margin-top: 30px
-}
-
-
 
  @media screen and (max-width:1624px){
   .nav-links{
@@ -958,16 +790,6 @@ form.select div {
     display: block;
     font-size: 20px;
   }
-  #removepumpbuttonspan {
-    display: inline-block;
-    margin-left: 4%;
-    width: 30%;
-  }
-  #removepumpbutton {
-    margin-top: -6px;
-    margin-left: 15%;
-    width: 70%;
-  }
   .modalbuttons {
     margin-top: 8px;
     width: 120px;
@@ -995,7 +817,7 @@ form.select div {
   .removemodalbutton {
     width: 120px;
   }
-  #machinemodal {
+  #productmodal {
     height: 356px;
   }
 }
@@ -1051,23 +873,18 @@ form.select div {
 		Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
 		*/
-		#tableoverview td:nth-of-type(1):before { content: "Maskine nr."; }
-		#tableoverview td:nth-of-type(2):before { content: "Pumpe Navn"; }
-		#tableoverview td:nth-of-type(3):before { content: "Færdig"; }
-    #tableoverview td:nth-of-type(4):before { content: "Stop Vanding";}
+		#tableoverview td:nth-of-type(1):before { content: "Produkt nr."; }
+		#tableoverview td:nth-of-type(2):before { content: "Navn"; }
+		#tableoverview td:nth-of-type(3):before { content: "Pris"; }
 
     #tablenotes td:nth-of-type(1):before { content: "Maskine nr."; }
 		#tablenotes td:nth-of-type(2):before { content: "Oprettet dato"; }
 		#tablenotes td:nth-of-type(3):before { content: "Note"; }
 
-    #tablemachineparkpumps td:nth-of-type(1):before { content: "Navn"; }
-		#tablemachineparkpumps td:nth-of-type(2):before { content: "Nummer"; }
-		#tablemachineparkpumps td:nth-of-type(3):before { content: "Startkode"; }
-    #tablemachineparkpumps td:nth-of-type(4):before { content: "Stopkode"; }
 
-    #tablemachineparkmachines td:nth-of-type(1):before { content: "Maskine nr."; }
-    #tablemachineparkmachines td:nth-of-type(2):before { content: "Model"; }
-    #tablemachineparkmachines td:nth-of-type(3):before { content: "Dyse størrelse"; }
+    #tableproducts td:nth-of-type(1):before { content: "Produkt nr."; }
+    #tableproducts td:nth-of-type(2):before { content: "Navn"; }
+    #tableproducts td:nth-of-type(3):before { content: "Pris"; }
 	}
 
 @keyframes navLinkFade{

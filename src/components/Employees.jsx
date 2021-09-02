@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
 import { withRouter } from "react-router-dom";
 
-function Maintenance({history, allMachines, setShownMachine, setNotes}){
+function Employees({history, setShownEmployee}){
 
-//   const HandleClick = (machine) => {
+  const HandleClick = (employee) => {
 
-//     setShownMachine(machine)
-//     history.push("/showmachine")
+    console.log(employee)
+    setShownEmployee(employee)
+    history.push("/showemployee")
 
-//   }
+  }
 
   const [employeeList, setEmployeeList] = useState([])
 
@@ -37,28 +38,28 @@ function Maintenance({history, allMachines, setShownMachine, setNotes}){
   }
 
   return(
-    <div id="maintenance">
-      <h1 id="maintenancetext">Medarbejdere</h1>
+    <div id="Employees">
+      <h1 id="Employeestext">Medarbejdere</h1>
       {employeeList.map((employee) => 
       {
         return(
-        <button key={employee["employeeId"]} id="maintenanceboxes" /*onClick={() => {HandleClick(machine)}}*/>
-            <div id="maintenancebox">
+        <button key={employee["employeeId"]} id="Employeesboxes" onClick={() => {HandleClick(employee)}}>
+            <div id="Employeesbox">
               <h1 id="employeename">
                 {NameShortener(employee["employeeName"])}
               </h1>
               <div id="hid-box">
-                <div id="maintenanceboxhover">
-                  <p className="maintenanceboxheading">
+                <div id="Employeesboxhover">
+                  <p className="Employeesboxheading">
                     Telefon-nummer
                   </p>
-                  <h3 className="maintenanceboxtext">
+                  <h3 className="Employeesboxtext">
                     {employee["phoneNumber"]}
                   </h3>
-                  <p className="maintenanceboxheading">
+                  <p className="Employeesboxheading">
                     Adresse
                   </p>
-                  <h3 className="maintenanceboxtext">
+                  <h3 className="Employeesboxtext">
                     {employee["employeeAddress"]}
                   </h3>
                 </div>
@@ -73,4 +74,4 @@ function Maintenance({history, allMachines, setShownMachine, setNotes}){
 
 }
 
-export default withRouter(Maintenance);
+export default withRouter(Employees);

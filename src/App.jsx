@@ -7,8 +7,7 @@ import { createBrowserHistory } from "history";
 
 import Products from "./components/Products/Products";
 import Employees from "./components/Employees";
-import Machinepark from "./components/MachinePark/index";
-import Showmachine from "./components/ShowMachine";
+import ShowEmployee from "./components/ShowEmployee";
 
 const history = createBrowserHistory();
 
@@ -19,8 +18,7 @@ function App() {
   const [submitted, setSubmitted] = useState(false)
 
   const [productList, setProductList] = useState([])
-  const [shownMachine, setShownMachine] = useState([])
-  const [notes, setNotes] = useState([])
+  const [shownEmployee, setShownEmployee] = useState({})
 
 
 
@@ -87,7 +85,10 @@ function App() {
                 <button onClick={(e) => HandleNavClick(e, "employees", "MEDARBEJDERE")}>MEDARBEJDERE</button>
               </li>
               <li>
-                <button onClick={(e) => HandleNavClick(e, "machinepark", "MASKINPARK")}>MASKINPARK</button>
+                <button onClick={(e) => HandleNavClick(e, "customers", "KUNDER")}>KUNDER</button>
+              </li>
+              <li>
+                <button onClick={(e) => HandleNavClick(e, "logout", "LOG UD")}>LOG UD</button>
               </li>
             </ul>
             <div className="burger" onClick={slide}>
@@ -105,13 +106,10 @@ function App() {
             <Products />
           </Route>
           <Route path="/employees">
-            <Employees />
+            <Employees setShownEmployee={setShownEmployee}/>
           </Route>
-          <Route path="/machinepark">
-            <Machinepark />
-          </Route>
-          <Route path="/showmachine">            
-            <Showmachine shownMachine={shownMachine} notes={notes} history={history} setNotes={setNotes}/>
+          <Route path="/showemployee">            
+            <ShowEmployee shownEmployee={shownEmployee} history={history}/>
           </Route>
         </main>
     </Router>
