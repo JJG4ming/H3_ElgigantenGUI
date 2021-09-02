@@ -88,7 +88,17 @@ input[type="datetime-local"] {
   font-size: 30px;
 }
 
-#createmachineid {
+#createproductname {
+  font-size: 18px;
+  width: 80%;
+  height: 36px;
+  border-radius: 10px;
+  border: solid rgb(230, 230, 230) 1px;
+  margin-left: 10%;
+  margin-top: 20px;
+}
+
+#createproductprice {
   font-size: 18px;
   width: 80%;
   height: 36px;
@@ -115,7 +125,7 @@ input[type="datetime-local"] {
 }
 
 #createmachinemodal {
-  height: 215px;
+  height: 260px;
 }
 
 .forms {
@@ -208,6 +218,7 @@ input[type="datetime-local"] {
 }
 
 .cancelmodalbutton {
+  color: black;
   border: solid blue 1px;
   margin-right: 5px;
   margin-top: 8px;

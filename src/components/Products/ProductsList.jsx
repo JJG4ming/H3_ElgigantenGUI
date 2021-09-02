@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const ProductsList = ({currentProduct, setCurrentProduct, history}) => {
+const ProductsList = ({currentProduct, setCurrentProduct, history}  ) => {
 
     const [productList, setProductList] = useState([])
 
@@ -26,7 +26,7 @@ const ProductsList = ({currentProduct, setCurrentProduct, history}) => {
             <div className="machineparktableheaders">
                 <h1 className="machineparktableheaderstext">Produkter</h1>
                 <h1 className="machineparktableheadersplus" onClick={() => {
-                    var modal = document.getElementById("modal5")
+                    var modal = document.getElementById("productmodal5")
                     modal.style.display = "block"
                 }}>+</h1>
             </div>

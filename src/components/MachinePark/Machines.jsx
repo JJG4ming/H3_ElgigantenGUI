@@ -40,7 +40,7 @@ const Machines = ({ allMachines, setCurrentMachine }) => {
                         <td onClick={(event) => {
                             setCurrentMachine(allMachines.find(x => x.id === data.id))
 
-                            var modal = document.getElementById("productmodal2")
+                            var modal = document.getElementById("modal2")
                             modal.style.display = "block"
                         }}>
                         <img src="https://icons-for-free.com/iconfiles/png/512/draw+edit+pen+pencil+text+write+icon-1320162307919760358.png" alt="" style={{width: 24}}></img>

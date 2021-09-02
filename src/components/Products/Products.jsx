@@ -10,9 +10,9 @@ function Products(){
 
   return( 
     <div>
-      <ProductsList currentProduct={currentProduct} setCurrentProduct={setCurrentProduct}/>    
+      <ProductsList currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} history/>    
       
-      <ProductModals currentProduct={currentProduct} setCurrentProduct={setCurrentProduct}/>
+      <ProductModals currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} history/>
     </div>
   )
 }
