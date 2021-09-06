@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { withRouter } from "react-router";
+import { Redirect } from "react-router-dom";
 
-const ProductModals = ({ currentProduct, setCurrentProduct, history}) => {
+const ProductModals = ({ currentProduct, setCurrentProduct, history, createProductInput, isMenuOpen, t}) => {
     const [name, setName] = useState({})
     const [price, setPrice] = useState({})
+
 
     const RemoveProduct = () => {    
         if (currentProduct) {
@@ -65,11 +67,12 @@ const ProductModals = ({ currentProduct, setCurrentProduct, history}) => {
           modal.style.display = "none"      
         }
       }
-    
+        
 
 
     return(
         <React.Fragment>
+          <div className="modalouter">
             <div className="modal" id="productmodal2">
                 <form className ="modalforms" id="productmodal" onSubmit={function(event){
                     event.preventDefault();
@@ -77,13 +80,13 @@ const ProductModals = ({ currentProduct, setCurrentProduct, history}) => {
                 }}>
                     <div className="modallabelbox">
                     <label>
-                        <span>Produkt nr.</span><input type="test" readOnly={true} className="bigmodalinputs" id="editproductid" name="editproductid" defaultValue={currentProduct["productId"]} required></input><br></br>
+                        <span>{t("Produkt nr.")}</span><input type="test" readOnly={true} className="bigmodalinputs" id="editproductid" name="editproductid" defaultValue={currentProduct["productId"]} required></input><br></br>
                     </label>
                     <label>
-                    <span>Navn</span><input type="text" className="modalinputs" id="editproductname" name="editproductname" onChange={e => setName(e.target.value)} defaultValue={currentProduct["productName"]}></input><br></br>
+                    <span>{t("Navn")}</span><input type="text" className="modalinputs" id="editproductname" name="editproductname" onChange={e => setName(e.target.value)} defaultValue={currentProduct["productName"]}></input><br></br>
                     </label>
                     <label>
-                    <span>Pris</span><input type="text" className="modalinputs" id="editproductprice" name="editproductprice" onChange={e => setPrice(e.target.value)} defaultValue={currentProduct["productPrice"]}></input><br></br>
+                    <span>{t("Pris")}</span><input type="text" className="modalinputs" id="editproductprice" name="editproductprice" onChange={e => setPrice(e.target.value)} defaultValue={currentProduct["productPrice"]}></input><br></br>
                     </label>
                     </div>
                     <span className="removemodalbuttonspan"></span><button className="removemodalbutton" id="removeproductbutton" type="button" onClick={function(event){
@@ -92,39 +95,44 @@ const ProductModals = ({ currentProduct, setCurrentProduct, history}) => {
                         modal.style.display = "none"
                         var modal6 = document.getElementById("productmodal6")
                         modal6.style.display = "block"
-                    }}>Slet Produkt</button>
+                    }}>{t("Slet Produkt")}</button>
                     <div className="modalbuttonbox">
-                    <button className="cancelmodalbutton" type="button" onClick={CloseAllModals}>Anuller</button>
-                    <button className="modalbuttons" id="updatemodalbutton" type="submit">Gem</button>
+                    <button className="cancelmodalbutton" type="button" onClick={CloseAllModals}>{t("Anuller")}</button>
+                    <button className="modalbuttons" id="updatemodalbutton" type="submit">{t("Gem")}</button>
                     </div>
                 </form>
             </div>
+          </div>
+          <div className="outermodal">
             <div className="modal" id="productmodal5">
                 <form className ="modalforms" id="createproductmodal" onSubmit={function(event){
                 event.preventDefault();
                 createProduct();
                 }}>
-                <h1 id="createproductmodaltext">Opret nyt produkt</h1>
-                    <input type="text" className="modalinputs" id="createproductname" name="createproductname" placeholder="Navn" required></input><br></br>
-                    <input type="text" className="modalinputs" id="createproductprice" name="createproductprice" placeholder="Pris" required></input><br></br>
+                <h1 id="createproductmodaltext">{t("Opret nyt produkt")}</h1>
+                    <input type="text" className="modalinputs" id="createproductname" name="createproductname" placeholder={t("Navn")} required ref={createProductInput}></input><br></br>
+                    <input type="text" className="modalinputs" id="createproductprice" name="createproductprice" placeholder={t("Pris")} required></input><br></br>
                     <div className="modalbuttonbox" id="createproductmodalbuttonbox">
-                    <button className="cancelmodalbutton" id="closemodalbutton" type="button" onClick={CloseAllModals}>Anuller</button>
-                    <button className="modalbuttons" id="updatemodalbutton" type="submit">Gem</button>
+                    <button className="cancelmodalbutton" id="closemodalbutton" type="button" onClick={CloseAllModals}>{t("Anuller")}</button>
+                    <button className="modalbuttons" id="updatemodalbutton" type="submit">{t("Gem")}</button>
                 </div>
                 </form>
             </div>
+          </div>
+          <div className="outermodal">
             <div className="modal" id="productmodal6">
                 <form className ="modalforms" id="removeproductmodal" onSubmit={function(event){
                     event.preventDefault();
                     RemoveProduct();
                 }}>
-                    <h1 className="labelremovemodal">Slet Produkt {currentProduct.id}?</h1>
+                    <h1 className="labelremovemodal">{t("Slet Produkt")} {currentProduct.id}?</h1>
                     <div className="modalbuttonbox">
-                    <button className="cancelmodalbutton" id="cancelproductmodal" type="button" onClick={CloseAllModals}>Anuller</button>
-                    <button className="removemodalbutton" id="removeproductmodalbutton" type="submit">Slet Produkt</button>
+                    <button className="cancelmodalbutton" id="cancelproductmodal" type="button" onClick={CloseAllModals}>{t("Anuller")}</button>
+                    <button className="removemodalbutton" id="removeproductmodalbutton" type="submit">{t("Slet Produkt")}</button>
                     </div>
                 </form>
             </div>
+          </div>
         </React.Fragment>
     )
 }

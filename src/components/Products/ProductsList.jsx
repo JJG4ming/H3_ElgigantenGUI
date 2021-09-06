@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from "react";
+import i18n from "i18next";
+import { useTranslation, initReactI18next } from "react-i18next";
+import React, { useEffect, useState, useRef } from "react";
 
-const ProductsList = ({setCurrentProduct, history}  ) => {
+
+const ProductsList = ({setCurrentProduct, history, createProductInput, setIsMenuOpen, t}) => {
 
     const [productList, setProductList] = useState([])
+
+    
 
     useEffect(() => {
         let mounted = true;
@@ -24,10 +29,12 @@ const ProductsList = ({setCurrentProduct, history}  ) => {
     return(
         <React.Fragment>             
             <div className="productstableheaders">
-                <h1 className="productstableheaderstext">Produkter</h1>
+                <h1 className="productstableheaderstext">{t("Produkter")}</h1>
                 <h1 className="productstableheadersplus" onClick={() => {
                     var modal = document.getElementById("productmodal5")
                     modal.style.display = "block"
+                    setIsMenuOpen(true)
+                    createProductInput.current.focus();
                 }}>+</h1>
             </div>
             <table className="productstables" id="tableproducts">
@@ -39,9 +46,9 @@ const ProductsList = ({setCurrentProduct, history}  ) => {
                 </colgroup>
                 <thead>
                 <tr>
-                    <th>Produktnummer</th>
-                    <th>Navn</th>
-                    <th>Pris</th>
+                    <th>{t("Produktnummer")}</th>
+                    <th>{t("Navn")}</th>
+                    <th>{t("Pris")}</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -58,6 +65,7 @@ const ProductsList = ({setCurrentProduct, history}  ) => {
                             var modal = document.getElementById("productmodal2")
                             console.log(modal)
                             modal.style.display = "block"
+                            setIsMenuOpen(true)
                         }}>
                         <img src="https://icons-for-free.com/iconfiles/png/512/draw+edit+pen+pencil+text+write+icon-1320162307919760358.png" alt="" style={{width: 24}}></img>
                         </td>
